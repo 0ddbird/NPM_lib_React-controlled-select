@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Select from './component/Select';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const options = [
+    {
+      name: 'test',
+      value: 'test'
+    },
+    {
+      name: 'test2',
+      value: 2
+    },{
+      name: 'test3',
+      value: [456, 'a', 39]
+    },
+  ]
+
+  const [selected, setSelected] = useState(options[0])
+
+  useEffect(() => {
+    console.log(selected)
+  }, [selected])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Select options={options} selected={selected} setSelected={setSelected} />
     </div>
   );
 }
