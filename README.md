@@ -30,15 +30,11 @@ A set of options look like this:
 const options = [
   {
     name: 'Option 1',
-    value: 1
+    value: 'test'
   },
   {
     name: 'Option 2',
     value: 'two'
-  },
-  {
-    name: 'Option 3',
-    value: [1,2,3]
   }
 ]
 ```
@@ -47,22 +43,20 @@ Example:
 
 ```js
 import React, { useState } from 'react'
+import Select from 'react-controlled-select'
 
 const ParentComponent = () => {
 
   const currentOptions = [
     {
       name: 'Option 1',
-      value: 1
+      value: 'one'
     },
     {
       name: 'Option 2',
       value: 'two'
     },
-    {
-      name: 'Option 3',
-      value: [1, '2', 456]
-    }
+
   ]
   const [selectedOption, setSelectedOption] = useState(currentOptions[0])
 
